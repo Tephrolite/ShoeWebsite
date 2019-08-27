@@ -1,0 +1,239 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+}
+
+.Page {
+    font-family: "Verdana", Geneva, sans-serif;
+    background-color: #5B7C7F;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    height: 50px;
+    width: 100%;
+    background-color: #07225B;
+    position: fixed;
+}
+
+.websiteTitleContainer {
+    font-size: 12px;
+    position: absolute;
+    color: #E7EDE6;
+    text-decoration: none;
+}
+
+.websiteTitleText {
+    font-size: 34px;
+}
+
+.websiteTitleContainer:hover .websiteTitleText {
+    cursor: pointer;
+    transform: skewX(20deg);
+    transition: 0.2s;
+}
+
+
+.LogIn {
+    align-content: center;
+    margin-left: auto;
+    width: 100px;    
+    height: 100%;  
+    background-color: #1C328C;
+    border: none;
+    outline: none;
+}
+
+.SignUp {
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100px;
+    height: 100%;
+    background-color: #1C328C;
+    border: none;
+    outline: none;
+}
+
+.LogIn:hover {
+    background-color:#5B7C7F;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.SignUp:hover {
+    background-color:#5B7C7F;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.buttonText {
+    color: #E7EDE6;
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pageContent {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.textContainer {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.subtextContainer {
+    align-self: flex-end;
+    margin-bottom: 2px;
+    width: 225px;
+}
+
+.textSeparator {
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    width: 400px;
+    height: 100%;
+}
+
+.subtextContainer2 {
+    align-self: flex-end;
+    text-align: end;
+    padding-left: 0px;
+    width: 150px;
+}
+
+.categoryTitle {
+    font-size: 28px;
+}
+
+.moreDisplay {
+    align-self: flex-end;
+    text-align: end;
+    text-decoration: none;
+    color: black;
+    padding-bottom: 2px;
+    font-size: 14px;
+}
+
+.moreDisplay:hover {
+    cursor: pointer;    
+}
+
+.displayRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 245px;
+    margin-bottom: 15px;
+}
+
+.shoeContainer {
+    display: flex;
+    flex-direction: row;
+    width:800px;
+}
+
+.displayedShoe {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 100%;
+    width: 230px;
+}
+
+.displayedShoe:hover {
+    transition: 0.15s;
+    transform: scale(1.03);    
+    cursor: pointer;
+}
+
+.shoeTile {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 180px;
+    background-color: #A5BAAE;
+}
+
+.shoeImage {
+    display: flex;
+    align-self: center;
+    width: 95%;
+    padding-top: 2px;
+    background-color: #A5BAAE;
+}
+
+.shoeImage:hover {
+    filter: blur(1px);
+}
+
+.infoContainer {
+    text-align: center; 
+    padding: 6px;
+    background-color:#A5BAAE;
+    display: flex;
+    flex-direction: column;
+    height: 90px;
+}
+
+.shoeInfo {
+    text-align: center;
+}
+
+.shoeName {
+    text-align: left;
+    font-size: 16px;
+}
+
+.shoePrice {
+    text-align: left;
+    font-size: 24px;
+}
+
+.scrollButton {
+    align-self: center;
+    height: 140px;
+    width: 20px;
+}
+
+.scrollButton:hover {
+    transition: .25s;
+    filter: brightness(.75);
+    transform: scale(1.2, 1.05);
+}
+
+.scrollButton:active .shoeTile {
+    transform: translate(100px);
+    transition: 1s;
+}
+
+#topLeftScrollButton {
+    width: 0;
+	height: 0;
+	border-top: 25px solid transparent;
+	border-right: 50px solid #555;
+    border-bottom: 25px solid transparent;
+    background-color: transparent;
+    color: transparent;
+    outline: none;
+}
