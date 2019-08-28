@@ -6,7 +6,7 @@ html, body {
 
 .Page {
     font-family: "Verdana", Geneva, sans-serif;
-    background-color: #5B7C7F;
+    background-color: #FFFFFF;
     height: 1000px;
     display: flex;
     flex-direction: column;
@@ -20,7 +20,7 @@ html, body {
     margin-bottom: 50px;
     height: 50px;
     width: 100%;
-    background-color: #07225B;
+    background-color: #000000;
     position: fixed;
 }
 
@@ -39,6 +39,7 @@ html, body {
     cursor: pointer;
     transform: skewX(20deg);
     transition: 0.2s;
+    color: #FED53B;
 }
 
 
@@ -47,9 +48,10 @@ html, body {
     margin-left: auto;
     width: 100px;    
     height: 100%;  
-    background-color: #1C328C;
+    background-color: #DBDBDB;
     border: none;
     outline: none;
+    text-decoration: none;
 }
 
 .SignUp {
@@ -58,25 +60,26 @@ html, body {
     margin-right: 10px;
     width: 100px;
     height: 100%;
-    background-color: #1C328C;
+    background-color: #DBDBDB;
     border: none;
     outline: none;
+    text-decoration: none;
 }
 
 .LogIn:hover {
-    background-color:#5B7C7F;
+    background-color:#FED53B;
     transition: 0.3s;
     cursor: pointer;
 }
 
 .SignUp:hover {
-    background-color:#5B7C7F;
+    background-color:#FED53B;
     transition: 0.3s;
     cursor: pointer;
 }
 
 .buttonText {
-    color: #E7EDE6;
+    color: #000000;
     font-weight: bold;
     font-size: 16px;
     display: flex;
@@ -123,6 +126,7 @@ html, body {
 
 .categoryTitle {
     font-size: 28px;
+    font-weight: bold;
 }
 
 .moreDisplay {
@@ -167,12 +171,25 @@ html, body {
     cursor: pointer;
 }
 
+.displayedShoe:hover .shoeTile {
+    background-color: #FED53B;
+}
+
+.displayedShoe:hover .shoeImage {
+    background-color: #FED53B;
+}
+
+
+.displayedShoe:hover .infoContainer {
+    background-color: #FED53B;
+}
+
 .shoeTile {
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 180px;
-    background-color: #A5BAAE;
+    background-color: #B0B0B0;
 }
 
 .shoeImage {
@@ -180,7 +197,7 @@ html, body {
     align-self: center;
     width: 95%;
     padding-top: 2px;
-    background-color: #A5BAAE;
+    background-color: #B0B0B0;
 }
 
 .shoeImage:hover {
@@ -190,7 +207,7 @@ html, body {
 .infoContainer {
     text-align: center; 
     padding: 6px;
-    background-color:#A5BAAE;
+    background-color:#B0B0B0;
     display: flex;
     flex-direction: column;
     height: 90px;
@@ -220,20 +237,4 @@ html, body {
     transition: .25s;
     filter: brightness(.75);
     transform: scale(1.2, 1.05);
-}
-
-.scrollButton:active .shoeTile {
-    transform: translate(100px);
-    transition: 1s;
-}
-
-#topLeftScrollButton {
-    width: 0;
-	height: 0;
-	border-top: 25px solid transparent;
-	border-right: 50px solid #555;
-    border-bottom: 25px solid transparent;
-    background-color: transparent;
-    color: transparent;
-    outline: none;
 }
