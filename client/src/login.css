@@ -1,0 +1,65 @@
+.logInPageContent {
+    margin: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logInHeaderTitle {
+    font-size: 24px;
+    margin: 0 0 10px 0;
+}
+
+.logInSignUp {
+    text-align: center;
+    margin: 0 10px 0 auto;
+    width: 100px;
+    height: 100%;
+    background-color: #DBDBDB;
+    border: none;
+    outline: none;
+    text-decoration: none;
+}
+
+.logInSignUp:hover {
+    background-color:#FED53B;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.logInContainer {
+    height: 160px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #B0B0B0;
+    border-radius: 4px;
+}
+
+.logInTextboxes {
+    margin: 0 0 10px 0;
+    padding-left: 10px;
+    height: 30px;
+    width: 300px;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+}
+
+.logInSubmit {    
+    width: 100px;
+    height: 25px;
+    border: none;
+    border-radius: 3px;
+    background-color: #DBDBDB;
+    outline: none;
+}
+
+.logInSubmit:hover {
+    cursor: pointer;
+    background-color: #FED53B;
+    transition: 0.3s;
+}
