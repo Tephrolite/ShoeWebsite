@@ -1,10 +1,12 @@
 // client/src/App.js
-import React, { Component } from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './Page.css';
 import leftScrollButton from './Horizontal Scroll Button (Left Top).png';
 import rightScrollButton from './Horizontal Scroll Button (Right Top).png';
 import Shoe from './Jordan 1 Black Toe Satin.jpg';
+import Header from './Header';
+import {ShoeContainer} from './ShoeContainer'
 
 class App extends Component {
    constructor(props) {
@@ -37,7 +39,12 @@ class App extends Component {
          { title: "Air Jordan 1 Retro High Satin Black Toe (W)", price: "$270", imgSrc: Shoe },
       ]
 
-      this.state = { popularShoes: popularShoes, bestSeller: bestSeller, popularShoeIndex: popularShoeIndex, bestSellerShoeIndex: bestSellerShoeIndex };
+      this.state = { 
+         popularShoes: popularShoes, 
+         bestSeller: bestSeller, 
+         popularShoeIndex: popularShoeIndex, 
+         bestSellerShoeIndex: bestSellerShoeIndex 
+      };
    }
 
 
@@ -45,82 +52,48 @@ class App extends Component {
       let index = this.state.popularShoeIndex;
       if (index < this.state.popularShoes.length - 4) {
          index++;
+         this.setState({ popularShoeIndex: index });
       }
-
-      this.setState({ popularShoeIndex: index });
    }
 
    showPreviousPopular = () => {
       let index = this.state.popularShoeIndex;
-      if (index != this.state.popularShoes.length - 8) {
+      if (index !== 0) {
          index--;
+         this.setState({ popularShoeIndex: index });
       }
 
-      this.setState({ popularShoeIndex: index });
    }
 
    showNextBestSeller = () => {
       let index = this.state.bestSellerShoeIndex;
       if (index < this.state.bestSeller.length - 4) {
          index++;
+         this.setState({ bestSellerShoeIndex: index });
       }
-
-      this.setState({ bestSellerShoeIndex: index });
    }
 
    showPreviousBestSeller = () => {
       let index = this.state.bestSellerShoeIndex;
-      if (index != this.state.bestSeller.length - 8) {
+      if (index !== 0) {
          index--;
+         this.setState({ bestSellerShoeIndex: index });
       }
+   }
 
-      this.setState({ bestSellerShoeIndex: index });
+   userLogIn = () => {
+      this.setState({
+         userLoggedIn: true, 
+      });
    }
 
 
-
-
-
-   shoeContainer = (shoe) => {
-      return (
-         <div className="displayedShoe">
-            <div className="shoeTile">
-               <img src={shoe.imgSrc} alt="Ya Broke it" className="shoeImage"></img>
-               <div className="infoContainer">
-                  <div className="shoeName">{shoe.title}</div>
-                  <div className="shoePrice">{shoe.price}</div>
-               </div>
-            </div>
-         </div>
-      )
-   }
-
-   header = () => {
-      return (
-         <div className="Header">
-            <div className="websiteTitleContainer">
-               <h1 className="websiteTitleText">
-                  Chicken Nuggets
-        </h1>
-            </div>
-            <Link to={'/popular'} className="LogIn">
-               <p className="buttonText">LOG IN</p>
-            </Link>
-            <Link to={'/bestseller'} className="SignUp">
-               <p className="buttonText">SIGN UP</p>
-            </Link>
-         </div>
-      )
-   }
 
    render() {
-
-      console.log('THE RENDER FUNCTION HAS FIRED')
-
       return (
          <div className="container">
             <div className="Page">
-               {this.header()}
+               <Header/>
                <div className="pageContent">
                   <div className="textContainer">
                      <div className="subtextContainer">
@@ -134,13 +107,13 @@ class App extends Component {
                   <div className="displayRow">
                      <img src={leftScrollButton} onClick={() => { this.showPreviousPopular(); }} alt="Chicken Nuggets" className="scrollButton" />
                      <div className="shoeContainer">
-                        {this.state.popularShoes.slice(this.state.popularShoeIndex, this.state.popularShoeIndex + 4).map((shoe) => { return this.shoeContainer(shoe) })}
+                        {this.state.popularShoes.slice(this.state.popularShoeIndex, this.state.popularShoeIndex + 4).map((shoe) => { return <ShoeContainer shoe={shoe}/> })}
                      </div>
                      <img src={rightScrollButton} onClick={() => { this.showNextPopular(); }} alt="Chicken Nuggets" className="scrollButton" />
                   </div>
                   <div className="textContainer">
                      <div className="subtextContainer">
-                        <div className="categoryTitle"> Best Sellers</div>
+                        <div className="categoryTitle">Best Sellers</div>
                      </div>
                      <div className="textSeparator" />
                      <div className="subtextContainer2">
@@ -150,7 +123,7 @@ class App extends Component {
                   <div className="displayRow">
                      <img src={leftScrollButton} onClick={() => { this.showPreviousBestSeller(); }} alt="Chicken Nuggets" className="scrollButton" />
                      <div className="shoeContainer">
-                        {this.state.bestSeller.slice(this.state.bestSellerShoeIndex, this.state.bestSellerShoeIndex + 4).map((shoe) => { return this.shoeContainer(shoe) })}
+                        {this.state.bestSeller.slice(this.state.bestSellerShoeIndex, this.state.bestSellerShoeIndex + 4).map((shoe) => { return <ShoeContainer shoe={shoe}/> })}
                      </div>
                      <img src={rightScrollButton} onClick={() => { this.showNextBestSeller(); }} alt="Chicken Nuggets" className="scrollButton" />
                   </div>
@@ -160,5 +133,6 @@ class App extends Component {
       );
    }
 }
+
 
 export default App;

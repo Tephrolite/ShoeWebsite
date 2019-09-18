@@ -1,23 +1,22 @@
 import React from 'react';
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import './Page.css';
+import './popular.css';
 
-class Users extends React.Component {
+class Popular extends React.Component {
 
 
 
    header = () => {
       return (
          <div className="Header">
-            <div className="websiteTitleContainer">
-               <h1 className="websiteTitleText">
-                  Chicken Nuggets
-        </h1>
-            </div>
-            <Link to={'/popular'} className="LogIn">
+            <Link to={'/'}className="websiteTitleContainer">
+               <h1 className="websiteTitleText">Spoons: The Most Inferior Eating Utensil Known To Man</h1>
+            </Link>
+            <Link to={'/login'} className="LogIn">
                <p className="buttonText">LOG IN</p>
             </Link>
-            <Link to={'/bestseller'} className="SignUp">
+            <Link to={'/signup'} className="SignUp">
                <p className="buttonText">SIGN UP</p>
             </Link>
          </div>
@@ -37,4 +36,4 @@ class Users extends React.Component {
       )
    }
 }
-export default Users
+export default Popular
