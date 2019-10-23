@@ -2,21 +2,33 @@ import React, { Component } from "react";
 import ReactDOM from 'react-dom';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
-import Popular from './popular';
-import BestSeller from './bestseller';
-import LogIn from './login';
-import SignUp from './signup';
+import Popular from './Pages/popular';
+import BestSeller from './Pages/bestseller';
+import LogIn from './Pages/login';
+import SignUp from './Pages/signup';
 import * as serviceWorker from './serviceWorker';
+import Header from "./Components/Header";
 
 class Routing extends Component {
+    constructor(){
+        super();
+        this.state = {
+            loggedIn: false
+        }
+    }
+
+    handleLogIn = () => this.setState({loggedIn: true})
+
     render() {
+        console.log(this.state.loggedIn)
         return (
             <Router>
-                <Route exact path="/" component={App} />
-                <Route path="/popular" component={Popular} />
-                <Route path="/bestseller" component={BestSeller} />
-                <Route path="/login" component={LogIn} />
-                <Route path="/signup" component={SignUp} />
+                <Header isLoggedIn= {this.state.loggedIn}/>
+                <Route exact path="/" render={() => <App />} />
+                <Route path="/popular" render={() => <Popular />} />
+                <Route path="/bestseller" render={() => <BestSeller />} />
+                <Route path="/login" render={() => <LogIn handleLogIn={this.handleLogIn}/>} />
+                <Route path="/signup" render={() => <SignUp />} />
             </Router>
         )
     }
