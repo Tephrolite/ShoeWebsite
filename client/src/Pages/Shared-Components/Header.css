@@ -1,0 +1,88 @@
+.Header {
+    font-family: "Verdana", Geneva, sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: #000000;
+}
+
+.Back {
+    align-content: center;
+    margin: 0 10px 0 10px;
+    width: 100px;    
+    height: 100%;  
+    background-color: #DBDBDB;
+    border: none;
+    outline: none;
+    text-decoration: none;
+}
+
+.Back:hover {
+    background-color:#FED53B;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.websiteTitleContainer {
+    font-size: 12px;
+    position: absolute;
+    color: #E7EDE6;
+    text-decoration: none;
+}
+
+.websiteTitleText {
+    font-size: 34px;
+}
+
+.websiteTitleContainer:hover .websiteTitleText {
+    cursor: pointer;
+    transform: skewX(20deg);
+    transition: 0.2s;
+    color: #FED53B;
+}
+
+.LogIn {
+    align-content: center;
+    margin: 0 10px 0 auto;
+    width: 100px;    
+    height: 100%;  
+    background-color: #DBDBDB;
+    border: none;
+    outline: none;
+    text-decoration: none;
+}
+
+.SignUp {
+    text-align: center;
+    margin: 0 10px 0 0;
+    width: 100px;
+    height: 100%;
+    background-color: #DBDBDB;
+    border: none;
+    outline: none;
+    text-decoration: none;
+}
+
+.LogIn:hover {
+    background-color:#FED53B;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.SignUp:hover {
+    background-color:#FED53B;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.buttonText {
+    color: #000000;
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
